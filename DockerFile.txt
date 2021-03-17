@@ -1,0 +1,8 @@
+Então, na raiz do nosso projeto, devemos criar o arquivo Dockerfile
+
+No PowerShell
+Criar o container
+docker build -f Dockerfile -t jackson/node . 
+
+Rodar o container
+docker run -d -p 8080:3000 jackson/node

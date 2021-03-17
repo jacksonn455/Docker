@@ -1,0 +1,11 @@
+PowerShell
+
+Docker login
+
+Cria um repositório no docker hub
+
+docker tag jackson/node jacksonn123/node:latest
+docker push jacksonn123/node:latest
+
+docker pull jacksonn123/node
+ 
