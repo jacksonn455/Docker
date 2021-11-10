@@ -52,6 +52,8 @@ docker imagens
 
 Remover imagens
 docker rmi hello-world
+Forçando remoção de imagem
+docker rmi hello-world -f
 
 Container que segurará um site estático ( -P mapeia uma porta aleatória )
 docker run -d –P dockersamples/static-site
