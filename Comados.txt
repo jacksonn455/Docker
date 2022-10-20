@@ -90,4 +90,18 @@ docker inspect
 docker pull NOME_USUARIO/NOME_IMAGEM
 docker pull douglasq/alura-books:cap05
 
+Log
+docker logs -f -t --tail 100 anymarket-cache  // log em tempo real
 
+Examinar container
+docker exec -it <container-id> /bin/sh
+--
+
+Docker-Compose
+
+Listar os containers
+docker-compose ps --service
+
+Log
+docker-compose logs -f -t --tail 100  indexador  // log em tempo real
+docker-compose logs
