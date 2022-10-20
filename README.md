@@ -1,116 +1,118 @@
 Curso de Docker
 ===============================================
-#Verificar a sua versão:
+
+-Verificar a sua versão:<br>
 docker version
 
-#Também podemos executar o clássico Hello World:
+-Também podemos executar o clássico Hello World:
 docker run hello-world
 
-#Imagem do Ubuntu
+-Imagem do Ubuntu
 docker run ubuntu
 
-#Docker irá executar um container com Ubuntu
+-Docker irá executar um container com Ubuntu
 docker run ubuntu echo "Ola Mundo"
 
-#Terminal do container:
+-Terminal do container:
 docker run -it ubuntu
 
-#Sair do container
+-Sair do container
 Ctrl + D
 
-#Container a ser iniciado
+-Container a ser iniciado
 docker start 2b28c00e8c45
 	
-#Container a ser parado
+-Container a ser parado
 docker stop 2b28c00e8c45
 
-#Tempo 0 para parar o container
+-Tempo 0 para parar o container
 docker stop –t 0 2b28c00e8c45
 
-#Interagirmos com o terminal do container criado
+-Interagirmos com o terminal do container criado
 docker start -a -i 2b28c00e8c45
 
-#Listar os containers, menos os parados
+-Listar os containers, menos os parados
 docker ps
 
-#Listar apenas id
+-Listar apenas id
 docker ps -q
 
-#Listar os containers, até os parados
+-Listar os containers, até os parados
 docker ps -a
 
-#Remover os containers
+-Remover os containers
 docker rm 2b28c00e8c45
 
-#Remove todos containers inativos
+-Remove todos containers inativos
 docker container prune
 
-#Mostra as imagens
+-Mostra as imagens
 docker imagens
 
-#Remover imagens
+-Remover imagens
 docker rmi hello-world
-#Forçando remoção de imagem
+-Forçando remoção de imagem
 docker rmi hello-world -f
 
-#Container que segurará um site estático ( -P mapeia uma porta aleatória )
+-Container que segurará um site estático ( -P mapeia uma porta aleatória )
 docker run -d –P dockersamples/static-site
-#Depois ver a porta usada
+-Depois ver a porta usada
 http://localhost:49154/
 
-#Mapeia uma porta especifica ( )
+-Mapeia uma porta especifica ( )
 docker run -d -p 12345:80 dockersamples/static-site
 
-#Depois ver a porta usada
+-Depois ver a porta usada
 http://localhost:12345/
 
-#Nome do container para ficar mais fácil de parar ele
+-Nome do container para ficar mais fácil de parar ele
 docker run -d -P --name meu-site dockersamples/static-site
 
-#Parar container pelo nome
+-Parar container pelo nome
 docker stop meu-site
 
-#Ver a porta que esta sendo usada
+-Ver a porta que esta sendo usada
 docker port 2b28c00e8c45
 
-#Variavel de ambiente (-e)
+-Variavel de ambiente (-e)
 docker run -d -P -e AUTHOR="Jackson Magnabosco" dockersamples/static-site
 
-#utilizando a flag -v para criar um volume
+-utilizando a flag -v para criar um volume
 docker run -v "/var/www" ubuntu
 
-#Pasta salva no desktop 
+-Pasta salva no desktop 
 docker run -it -v "C:\Users\Avell\Desktop:/var/www" Ubuntu
 
-#Inspecionar o container
+-Inspecionar o container
 docker inspect
 
-#docker pull NOME_USUARIO/NOME_IMAGEM
-#docker pull douglasq/alura-books:cap05
+-docker pull NOME_USUARIO/NOME_IMAGEM
+-docker pull douglasq/alura-books:cap05
 
-#Log
+-Log
 docker logs -f -t --tail 100 anymarket-cache  // log em tempo real
 
-#Examinar container
+-Examinar container 
 docker exec -it <container-id> /bin/sh
+
 --
 
-#Docker-Compose
+-Docker-Compose
 
-#Listar os containers
+-Listar os containers
 docker-compose ps --service
 
-#Log
+-Log
 docker-compose logs -f -t --tail 100  indexador  // log em tempo real
 docker-compose logs
 
-#Derruba o container
+-Derruba o container
 docker-compose down
 
-#Constroi o container
+-Constroi o container
 docker-compose build
 
-#Sobe container
+-Sobe container
 docker-compose up -d
 
 --------------------
