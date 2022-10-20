@@ -99,9 +99,18 @@ docker exec -it <container-id> /bin/sh
 
 Docker-Compose
 
-Listar os containers
+#Listar os containers
 docker-compose ps --service
 
-Log
+#Log
 docker-compose logs -f -t --tail 100  indexador  // log em tempo real
 docker-compose logs
+
+#Derruba o container
+docker-compose down
+
+#Constroi o container
+docker-compose build
+
+#Sobe container
+docker-compose up -d
