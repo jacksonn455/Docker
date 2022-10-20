@@ -95,7 +95,7 @@ docker logs - f - t - - tail 100 anymarket- cache  // log em tempo real
 - Examinar container  <br>
 docker exec - it <container- id> /bin/sh
 
-- - 
+-- 
 
 - Docker-Compose
 
@@ -114,6 +114,3 @@ docker- compose build
 
 - Sobe container <br>
 docker- compose up - d
-
-- - - - - - - - - - - - - - - - - - - - 
- ![](https://github.com/jacksonn455/Docker/blob/main/1200px- Docker_(container_engine)_logo.svg.png)
